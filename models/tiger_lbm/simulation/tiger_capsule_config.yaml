@@ -1,0 +1,35 @@
+# tiger_capsule_config.yaml — TIGER swimmer with a solid capsule body and a thrusting bundle.
+# All lengths in lattice cells (dx = units.dx_um); forces and torques in lattice units.
+# The body matches the phage model (tiger.model.ReceptorSimParams: Rb = 0.8 um, bac_length = 1.9 um).
+
+units:
+  dx_um: 0.16            # um per cell
+
+grid:                    # 16.0 x 7.7 x 7.7 um, periodic
+  nx: 100
+  ny: 48
+  nz: 48
+
+fluid:
+  tau: 1.0               # nu = (tau - 1/2)/3 = 1/6
+
+body:
+  R: 5.0                 # 0.80 um capsule radius
+  L: 12.0                # 1.92 um cylinder half-length -> total length 2(L+R) = 5.4 um
+  centre: [62, 24, 24]   # cell swims toward +x; the bundle sits behind it (-x)
+
+bundle:                  # helical flagellar bundle behind the rear pole
+  gap: 2.0               # 0.32 um from the rear pole
+  length: 31.0           # 5.0 um
+  radius: 2.0            # 0.32 um helix radius (a few cells, so it resolves on the grid)
+  pitch: 14.0            # 2.24 um, E. coli normal-form pitch
+  n_points: 160
+  sigma: 1.0             # Gaussian spreading width (cells)
+  omega: 0.0628          # bundle phase speed (rad/step): one turn per 100 steps (quasi-static at Re << 1)
+  thrust: 0.08           # total thrust on the fluid (along -x)
+  torque: 1.07           # total torque on the fluid (about +x); the body counter-rotates by torque balance
+
+run:
+  init_U: 1.29e-3        # start the fluid streaming past the cell at about the swim speed (from a first run)
+  steps: 6000
+  avg: 1000              # average the last N steps (10 bundle turns)

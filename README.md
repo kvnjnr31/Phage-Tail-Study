@@ -51,8 +51,9 @@ give opposite answers, so the rule should be settled before running long sweeps.
    ~470 µm/s median, which is far above E. coli's ~30 µm/s. E2 therefore rescales the field to a target swim speed
    (`--lbm-target-speed`, default 30 µm/s). The LBM grid is also small (about ±3 µm around the cell), and beyond it
    the flow is zero. A fresh run of the default config
-   (Oct 2026, `models/tiger_lbm/figures/tiger_flow_slice_rotation_only.png`) has no thrust: the cell does not move and
-   the flow is only the counter-rotating body and bundle swirl. The saved field came from another configuration.
+   (Oct 2026) has no thrust: the cell does not move. `models/tiger_lbm/simulation/tiger_capsule.py` now gives a
+   swimming capsule (same shape as the phage model) with thrust; its field, in units of the swim speed, is the one
+   to load into `TigerLBMFlow` next.
 4. **Data value to check.** `data/phage_characteristics.xlsx` (family_typical sheet, from `phage_characteristics.m`) lists a
    980 nm Siphoviridae tail. The 2025 violin script used 98 nm for the same entry. One of them is a units slip; 980 nm
    pulls the Siphoviridae mean tail to 281 nm (median 165.5 nm). The Abedon 2023 T4 label was fixed (now Myoviridae).
