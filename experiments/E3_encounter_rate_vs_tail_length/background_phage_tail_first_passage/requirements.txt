@@ -1,0 +1,11 @@
+litstudy
+matplotlib
+networkx
+numpy
+openai
+pandas
+pypaperbot
+python-dotenv
+scikit-learn
+sentence-transformers
+tqdm

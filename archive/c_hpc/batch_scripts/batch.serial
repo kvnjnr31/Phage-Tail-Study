@@ -1,0 +1,27 @@
+#!/bin/sh
+#PBS -V
+#PBS -l nodes=1:ppn=2:mpi
+#PBS -N serial-test
+#PBS -joe
+#PBS -q batch
+
+# for more information on pbs resource requests 
+# see "man pbs_resources"
+
+# PLEASE NOTE: this script should works when submitting a single, or
+# a few, serial (non-mpi) processes to run on a SINGLE NODE --
+
+# notice that there is no need to "figure out" which node was
+# allocated and then "rsh" to a node -- the commands in this
+# batch script automatically run on the allocated node -- though 
+# for jobs that require multiple nodes this simple procedure will
+# will not be sufficient -- then processes need to be started on
+# other nodes as well -- for mpi jobs, "mpirun" helps to automate
+# that procedure though typically it has to be supplied with a
+# list of allocated nodes...
+
+cd $PBS_O_WORKDIR
+NODE=`hostname`
+echo Running serial job on node $NODE
+./hello-serial jack
+./hello-serial jill

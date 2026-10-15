@@ -1,0 +1,13 @@
+[project]
+name = "tiger"
+version = "0.1.0"
+description = "Python port of the TIGER phage-bacteria MATLAB models"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "pandas", "matplotlib", "openpyxl"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["tiger*"]

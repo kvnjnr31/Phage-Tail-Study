@@ -1,0 +1,17 @@
+#!/bin/bash
+# File single_node.pbs
+# ~Sep. 2016 kjoiner@rohan.sdsu.edu
+# Runs a single node MATLAB job on a node of the cluster. this script
+# should works when submitting a single, or a few, serial (non-mpi) 
+# processes to run on a SINGLE NODE --
+
+#PBS -V
+#PBS -l nodes=1:ppn=6
+#PBS -N MAVERICK_run_tum
+#PBS -joe
+#PBS -q batch
+
+cd $PBS_O_WORKDIR
+NODE=`hostname`
+echo Running serial job on node $NODE
+matlab -r 'encounter_exp_par_run_tum'
