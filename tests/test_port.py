@@ -79,3 +79,55 @@ def test_ols():
     x = np.arange(10.0)
     f = ols(2 + 3 * x, x)
     assert np.allclose(f.beta, [2, 3]) and f.r2 == pytest.approx(1.0)
+
+
+# --- hydro surface-walk helpers (encounter_rates_hydro/ *.m) ---------------------------------
+from tiger.encounter.hydro import hydro_advect, hydro_encounter, hydro_overlap, rotate_to_xy_plane
+
+
+def _langevin_fun_m(MatP, U, Rb, dt, Dy=1.0, Dz=1.0):
+    """Line-by-line transcription of Langevin_fun.m (encounter_rates_hydro) for comparison."""
+    x, y, z = MatP[:, 0], MatP[:, 1], MatP[:, 2]
+    r = np.sqrt(x ** 2 + Dy * y ** 2 + Dz * z ** 2); r2, r3, r4 = r ** 2, r ** 3, r ** 4
+    dot = U[0] * x + Dy * U[1] * y + Dz * U[2] * z
+    a = (3 * Rb / (4 * r)) * (1 + Rb ** 2 / (3 * r2))
+    b = (3 * Rb / (4 * r)) * (1 / r2 - Rb ** 2 / r4)
+    phi2, phi3 = -Rb ** 3 * y / r3, -Rb ** 3 * z / r3
+    nx = x - (a * U[0] + b * x * dot) * dt + U[0] * dt
+    ny = Dy * (y - (Dy * a * U[1] + Dy * b * y * dot) * dt - U[0] * phi3 * dt + U[1] * dt)
+    nz = Dz * (z - (Dz * a * U[2] + Dz * b * z * dot) * dt + U[0] * phi2 * dt + U[2] * dt)
+    return np.column_stack([nx, ny, nz])
+
+
+def test_hydro_advect_matches_langevin_fun_m():
+    rng = np.random.default_rng(1)
+    pos = rng.uniform(-4, 4, (500, 3)); pos = pos[np.linalg.norm(pos, axis=1) > 1.2]
+    U = np.array([-30.0, 0.0, 0.0])
+    got = hydro_advect(pos.copy(), U, 1.0, 0.01, np.ones(3))
+    np.testing.assert_allclose(got, _langevin_fun_m(pos, U, 1.0, 0.01), rtol=1e-12, atol=1e-12)
+
+
+def test_hydro_swirl_is_rotation_about_swim_axis():
+    rng = np.random.default_rng(2)
+    pos = rng.uniform(-4, 4, (200, 3)); pos = pos[np.linalg.norm(pos, axis=1) > 1.2]
+    U = np.array([-30.0, 0.0, 0.0])
+    d = hydro_advect(pos.copy(), U, 1.0, 0.01, np.ones(3), swirl=1.0) - \
+        hydro_advect(pos.copy(), U, 1.0, 0.01, np.ones(3), swirl=0.0)
+    assert np.allclose(d[:, 0], 0) and np.allclose(np.sum(d[:, 1:] * pos[:, 1:], 1), 0)
+
+
+def test_hydro_encounter_reflects_outside_capture_sphere():
+    prev = np.array([[1.5, 0.0, 0.0], [0.0, 1.4, 0.2]])
+    pos = np.array([[1.0, 0.05, 0.0], [0.0, 1.0, 0.1]])
+    active, res = np.ones(2, bool), np.zeros(2)
+    Nenc, Nact, _, _ = hydro_encounter(pos, prev, active, res, 1.1, 0.05, 0.01)
+    assert Nenc == 2 and Nact == 2 and not active.any()
+    assert np.all(np.linalg.norm(pos, axis=1) >= 1.1 - 1e-9)
+
+
+def test_overlap_and_xy_fold():
+    pos = np.array([[0.2, 0.1, 0.0], [2.0, -1.0, 1.0]])
+    assert list(hydro_overlap(pos, 1.0, warn=False)) == [0]
+    xy = rotate_to_xy_plane(pos)
+    np.testing.assert_allclose(np.linalg.norm(xy, axis=1), np.linalg.norm(pos, axis=1))
+    assert xy[1, 1] < 0 and np.allclose(xy[:, 2], 0)

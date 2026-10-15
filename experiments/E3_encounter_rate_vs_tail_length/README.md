@@ -6,7 +6,7 @@ Rc = Rb + Rp + L? This is the upper bound that receptor binding (E1/E2) can only
 **Method.** The script compares three estimates.
 - Diffusive limit: 4πD₀Rc.
 - Ballistic limit: πRc²v.
-- Simulation: `tiger.encounter.encounter_rates_hydro`, phage in the Stokes flow of a swimming sphere, with capture at Rc.
+- Simulation: `tiger.encounter.encounter_rates_hydro`, phage in the Stokes flow of a swimming sphere plus a swirl about the swimming axis (as in the MATLAB `Langevin_fun.m`; its strength equals the swim speed at the surface, scale it with `swirl=`), with capture at Rc.
 
 It sweeps tail length and swim speed.
 

@@ -29,7 +29,7 @@ python experiments/E4_literature_adsorption_vs_tail_length/run.py
 | cylinder/sphere surface code (inline everywhere) | `tiger.model.geometry` (capsule level set, projection, mesh) |
 | `simulation_plotter.m`, `sim_plotter.m` | `tiger.model.plotting` |
 | **surface_walks/** and **encounter_rates_hydro/** (identical helpers) | |
-| `encounter_rates_hydro.m`, `Langevin_fun.m`, `noise_gen.m`, `encounter_fun_hydro.m`, `boundarys_hydro.m` | `tiger.encounter.hydro.encounter_rates_hydro` (+ `hydro_advect`, `hydro_noise`, `hydro_encounter`, `hydro_boundaries`) |
+| `encounter_rates_hydro.m`, `Langevin_fun.m`, `noise_gen.m` (and the older autosave `noise_gen.asv`), `encounter_fun_hydro.m`, `boundarys_hydro.m`, `overlap.m`, `sim_plotter.m` | `tiger.encounter.hydro.encounter_rates_hydro` (+ `hydro_advect`, `hydro_noise`, `hydro_encounter`, `hydro_boundaries`, `hydro_overlap`/`plot_overlap`, `plot_concentration`, `rotate_to_xy_plane`/`plot_cloud`). `hydro_advect` is checked line by line against `Langevin_fun.m` in `tests/test_port.py`. |
 | `plot_fun.m` (kernel theory) | `tiger.encounter.theory.diffusive_kernel`, `ballistic_kernel`, `plot_kernel` |
 | **Phage_Bacteria_1** | |
 | `Code for paper/encounter_rates_algorithm/*`, `Encounter Rates/encounter_rates_3D/*` | `tiger.encounter.simulators.encounter_rates_3d`, `boundarys_3d` |

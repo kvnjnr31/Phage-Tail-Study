@@ -149,7 +149,7 @@ Each simulation step runs these stages in order: compute binding probabilities, 
 \begin{equation}\label{eq:stokes_sphere}
 \bm u_s(\bm r)=\bm v_B\left(\frac{3R_B}{4r}+\frac{R_B^{3}}{4r^{3}}\right)+\bm r\,(\bm v_B\cdot\bm r)\left(\frac{3R_B}{4r^{3}}-\frac{3R_B^{3}}{4r^{5}}\right),
 \end{equation}
-where $\bm r$ is measured from the sphere centre. In the frame of the cell, phages move with $\bm u_s-\bm v_B$. We use the sphere with the same volume as the capsule, $R_B^{\rm eq}=1.18\,\mu$m. This flow has no rotation of the body or the flagellar bundle. Experiments E2, E3 and E6 use it as the default flow (\texttt{tiger.flow.StokesSwimmerFlow}).
+where $\bm r$ is measured from the sphere centre. In the frame of the cell, phages move with $\bm u_s-\bm v_B$. Experiments E2 and E6 use this flow around the sphere with the same volume as the capsule, $R_B^{\rm eq}=1.18\,\mu$m (\texttt{tiger.flow.StokesSwimmerFlow}); it has no rotation. Experiment E3 (\texttt{tiger.encounter.hydro}) uses a sphere of radius $R_B=1\,\mu$m and adds a swirl about the swimming axis, $\bm u_{\rm rot}=R_B^{3}\,\bm\omega\times\bm r/r^{3}$. The original MATLAB sets $|\bm\omega|$ numerically equal to $v_B/(1\,\mu\mathrm{m})$, so the swirl at the cell surface equals the swim speed; the \texttt{swirl} option rescales it. \todo{Set $\omega$ from measured body rotation (about 10--20\,rad\,s$^{-1}$) or from the TIGER LBM field.}
 
 % ---------------------------------------------------------------------
 \subsection*{Lattice Boltzmann model of the swimming cell (TIGER)}
