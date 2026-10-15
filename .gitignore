@@ -10,3 +10,6 @@ manuscript/*.out
 manuscript/*.blg
 manuscript/*.bbl
 manuscript/*.pdf
+
+# TIGER LBM outputs (large .npy)
+models/tiger_lbm/data/numerical/

@@ -21,7 +21,7 @@ python experiments/E1_binding_vs_tail_length_static/run.py
 | `experiments/` | One folder per question. Each has a `run.py`, a `README.md`, and writes its output to `results/`. |
 | `data/` | Cleaned input data: `adsorption_data.xlsx` (66 rate constants, with `codes`, `data_issues` and `changes` sheets), `adsorption_references.xlsx` (source URLs), `phage_characteristics.xlsx`, `bacteria_characteristics.xlsx` (incl. Maeda swim/tumble data), the gp37–LPS force curve and the Schwartz receptor data. See `data/README.md`. |
 | `manuscript/` | LaTeX draft (`main.tex`, `supplement.tex`, `references.bib`, `Figures/`). Overleaf-ready: upload the folder as a project. |
-| `models/tiger_lbm/` | The **TIGER** swimmer itself: a lattice-Boltzmann fluid driven by the rotating body and flagellar bundle (`hybrid_simulation.py`). It produces the velocity fields that `tiger.flow.TigerLBMFlow` loads. The large `.npy` outputs stay in iCloud: `phage_dynamics/Projects/agent_based_modeling/code/bacteria_ABM/data/numerical/`. |
+| `models/tiger_lbm/` | The **TIGER** swimmer itself: a lattice-Boltzmann fluid driven by the rotating body and flagellar bundle (`hybrid_simulation.py`). It produces the velocity fields that `tiger.flow.TigerLBMFlow` loads; `simulation/run_tiger.py` + `plot_flow_slice.py` run it and plot 2D slices (see its README). The large `.npy` outputs stay in iCloud: `phage_dynamics/Projects/agent_based_modeling/code/bacteria_ABM/data/numerical/`. |
 | `models/sphere_surface_walk/` | A separate Python model from 2025: surface walks on a spherical cell with absorbing receptor patches, Mg²⁺-modulated binding and a beads-on-a-stick tail. It already supports tail-length and receptor-density sweeps, and is useful as a cross-check of E1. |
 | `tests/` | Sanity tests: theory limits, constraint checks, receptor placement. |
 | `archive/` | `matlab_reference/` holds the 95 MATLAB originals of the ported code. `PORT_NOTES.md` maps each MATLAB file to its Python replacement and lists the fixes and the switches that were off in the MATLAB. `data_legacy/` holds the raw spreadsheets the cleaned data came from (incl. the 2026 adsorption file and URL list). `violin_study_2025/` holds the 2025 violin scripts, figures, Word report and templates. Also here: `python_legacy/` and `c_hpc/`. |
@@ -50,7 +50,9 @@ give opposite answers, so the rule should be settled before running long sweeps.
 3. **The TIGER LBM field is not usable at its raw scale.** With the saved run, the calibrated speeds come out at
    ~470 µm/s median, which is far above E. coli's ~30 µm/s. E2 therefore rescales the field to a target swim speed
    (`--lbm-target-speed`, default 30 µm/s). The LBM grid is also small (about ±3 µm around the cell), and beyond it
-   the flow is zero.
+   the flow is zero. A fresh run of the default config
+   (Oct 2026, `models/tiger_lbm/figures/tiger_flow_slice_rotation_only.png`) has no thrust: the cell does not move and
+   the flow is only the counter-rotating body and bundle swirl. The saved field came from another configuration.
 4. **Data value to check.** `data/phage_characteristics.xlsx` (family_typical sheet, from `phage_characteristics.m`) lists a
    980 nm Siphoviridae tail. The 2025 violin script used 98 nm for the same entry. One of them is a units slip; 980 nm
    pulls the Siphoviridae mean tail to 281 nm (median 165.5 nm). The Abedon 2023 T4 label was fixed (now Myoviridae).

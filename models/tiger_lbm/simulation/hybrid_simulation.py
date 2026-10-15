@@ -22,7 +22,8 @@ import yaml
 # 1. LATTICE + PHYSICAL CONFIG (from YAML)
 # ---------------------------------------------------------------------
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "tiger_simulation_config.yaml")
+# TIGER_CONFIG (set by run_tiger.py --config) overrides the default config file.
+CONFIG_PATH = os.environ.get("TIGER_CONFIG") or os.path.join(os.path.dirname(__file__), "tiger_simulation_config.yaml")
 with open(CONFIG_PATH, "r") as f:
     config = yaml.safe_load(f)
 
