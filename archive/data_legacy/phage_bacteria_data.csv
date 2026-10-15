@@ -1,0 +1,83 @@
+Reference,Host,Tail,Phage,Bacteria,Adsorption,Temperature,Medium
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,3.50E-09,1.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,1.08E-08,3.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,8.30E-09,4.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,5.76E-08,10.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,7.20E-08,15.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,4.32E-08,20.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,1.19E-07,24.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,5.40E-08,30.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,7.20E-08,35.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,5.76E-08,37.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,5.76E-08,40.0,Glucose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,2.70E-09,1.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,2.16E-08,3.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,1.30E-08,4.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,4.68E-08,10.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,1.26E-07,15.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,5.04E-08,20.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,7.92E-06,24.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,5.76E-08,30.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,9.72E-08,35.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,9.36E-08,37.0,Maltose
+Moldovan et al 2007,E. coli,Siphoviridae,Lambda,1,1.04E-07,40.0,Maltose
+Shao and Wang 2008,E. coli,Siphoviridae,Lambda,1,5.94E-07,37.0,stf+
+Shao and Wang 2008,E. coli,Siphoviridae,Lambda,1,7.98E-08,37.0,stf-
+Puck 1950,E. coli,Siphoviridae,T1,1,1.86E-07,37.0,Broth
+Storms et al 2012,E. Coli,Siphoviridae,T5,1,1.50E-06,24.0,MSM
+Storms et al 2012,E. Coli,Siphoviridae,T5,1,3.18E-07,24.0,TSB
+Storms et al 2012,E. Coli,Siphoviridae,T5,1,4.14E-08,24.0,NB
+Suttle and Chan 1993,Synechococcus,Siphoviridae,Env Isolate,2,2.36E-07,25.0,ESAW
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,2.23E-08,4.6,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,2.98E-08,16.2,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,3.66E-08,24.7,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,6.49E-08,36.3,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,6.74E-08,43.8,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,2.42E-08,4.6,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,3.19E-08,16.2,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,3.69E-08,24.7,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,5.32E-08,36.3,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Siphoviridae,J1,3,6.35E-08,43.8,LB (Broth)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,1.38E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,1.80E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,2.52E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,2.52E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,2.58E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,3.00E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,3.18E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,3.30E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,3.66E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,4.20E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,4.20E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,4.92E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,9.60E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,5.70E-08,23.0,SN (seawater)
+Stoddard et al 2007,Synechococcus,Myoviridae,Env Isolate,2,7.20E-08,23.0,SN (seawater)
+Mann 1995,Synechococcus,Myoviridae,Env Isolate,2,3.66E-07,25.0,ASW (seawater)
+Puck 1950,E. coli,Myoviridae,T2,1,1.26E-07,37.0,Broth
+Storms etal 2010,E. coli,Myoviridae,T4,1,5.40E-07,37.0,TSB
+Storms etal 2010,E. coli,Myoviridae,T4,1,1.08E-05,37.0,MSM
+Storms etal 2010,E. coli,Myoviridae,T4,1,1.33E-06,24.0,MSM
+Storms etal 2010,E. coli,Myoviridae,T4,1,2.45E-06,24.0,MSM
+Storms etal 2010,E. coli,Myoviridae,T4,1,2.63E-07,24.0,TSB
+Storms etal 2010,E. coli,Myoviridae,T4,1,1.22E-07,24.0,NB
+Storms etal 2012,E. coli,Myoviridae,T4,1,1.32E-06,24.0,MSM
+Storms etal 2012,E. coli,Myoviridae,T4,1,2.64E-07,24.0,TSB
+Storms etal 2012,E. coli,Myoviridae,T4,1,1.20E-07,24.0,NB
+Storms etal 2012,E. coli,Myoviridae,T2,1,5.88E-07,24.0,MSM
+Storms etal 2012,E. coli,Myoviridae,T2,1,3.12E-07,24.0,TSB
+Storms etal 2012,E. coli,Myoviridae,T2,1,5.58E-08,24.0,NB
+Storms etal 2012,E. coli,Myoviridae,T6,1,2.04E-07,24.0,MSM
+Storms etal 2012,E. coli,Myoviridae,T6,1,5.82E-08,24.0,TSB
+Storms etal 2012,E. coli,Myoviridae,T6,1,5.58E-08,24.0,NB
+Puck 1950,E. coli,Myoviridae,T4,1,1.86E-07,37.0,Difco (Broth)
+Barr 2015,E. coli,Myoviridae,T4,1,1.38E-07,37.0,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Podoviridae,delta,3,5.25E-08,4.6,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Podoviridae,delta,3,5.69E-08,16.2,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Podoviridae,delta,3,6.12E-08,24.7,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Podoviridae,dela,3,7.13E-08,36.3,LB (Broth)
+Knezevic et al 2011,Ps. Aeruginosa,Podoviridae,delta,3,7.89E-08,43.8,LB (Broth)
+Puck 1950,E. coli,Podoviridae,T3,1,1.80E-07,37.0,Broth
+Storms etal 2012,E. coli,Podoviridae,T7,1,3.42E-07,24.0,MSM
+Storms etal 2012,E. coli,Podoviridae,T7,1,3.72E-07,24.0,TSB
+Storms etal 2012,E. coli,Podoviridae,T7,1,5.82E-08,24.0,NB
